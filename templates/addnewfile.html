@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add new file</title>
+</head>
+<body>
+    <div class="center">
+<form action="/addnew" method="post">
+    <input type="text" name="filename" placeholder="Enter file name" autocomplete="off" required><br><br>
+    <textarea name="filecontent" rows="24" cols="100" placeholder="Enter content of the file"></textarea><br><br>
+    <input type="submit" value="submit">
+</form>
+<br><br>
+{% if msg %}
+<b>{{msg}}</b>
+{% endif %}
+</div>
+</body>
+</html>
